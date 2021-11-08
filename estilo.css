@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    background: #eef9bf;
+    flex-direction: column;
+    align-items: center;
+  }
+  .texto {
+    
+    margin-top: 40px;
+    margin-bottom: 47px;
+    display: flex;
+    perspective: 1000 px;
+    color: #75b79e;
+    font-family: Roboto;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+    text-align: left;
+    width: 620 px;
+    width: 540px;
+    justify-content: center;
+  }
+  .jogo-memoria {
+   
+    margin: 0 121px;
+    display: flex;
+    flex-wrap: wrap; 
+    
+   
+  }
+
+  @media (max-width:335px){
+    .jogo-memoria{
+      align-items: center;
+      flex: none;
+    padding: 0;
+    }
+  }
+
+  .carta-jogo {
+    width: 117px;
+        
+    height:  146px;
+    
+    
+
+    margin: 15px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: 1px 1px 1px #99cea8;
+  }
+  
+  .carta-jogo:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+  }
+  
+  .carta-jogo.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .frente,
+  .verso {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #a7e9af;
+  
+    backface-visibility: hidden;
+  }
+  
+  .frente {
+    transform: rotateY(180deg);
+  }
+  
