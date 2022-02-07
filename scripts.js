@@ -3,7 +3,15 @@ const container = document.querySelector(".jogo-memoria");
 var numeroDeCartas = 0
 const myCards = ["bobrossparrot", "fiestaparrot", "explodyparrot", "metalparrot", "revertitparrot", "tripletsparrot", "unicornparrot"];
 var jogadas = 0
-var vidas = 3
+var vidas = 10
+var tempoDeJogo = 0;
+
+function aumentarContador() {
+  const spanContador = document.querySelector('.contador span');
+  tempoDeJogo++;
+  spanContador.innerHTML = tempoDeJogo;
+}
+
 function addCards(){
   while(numeroDeCartas<4 || numeroDeCartas>14 || numeroDeCartas%2 ==1)
    numeroDeCartas = parseInt(prompt("Quantas cartas?"));
@@ -62,7 +70,7 @@ function checkForMatch() {
   isMatch ? disablecartas() : unflipcartas();
   jogadas ++
   if (pontos == numeroDeCartas/2){
-    alert(`Você ganhou em ${jogadas} jogadas!`)
+    alert(`Você ganhou em ${jogadas} jogadas! e em${tempoDeJogo} segundos`)
   }
   if (vidas==0){
     alert(`perdeu calvo`)
@@ -99,10 +107,11 @@ function jogarDenovo (){
   numeroDeCartas=0
   jogadas=0
   vidas=3
+  tempoDeJogo = 0;
   container.innerHTML=""
   addCards()
   resetBoard()
  cartas = document.querySelectorAll(".carta-jogo");
 cartas.forEach((carta) => carta.addEventListener("click", flipcarta));
-}
 
+}

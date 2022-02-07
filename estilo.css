@@ -85,4 +85,10 @@
   .frente {
     transform: rotateY(180deg);
   }
+  .contador span {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 42px;
+    font-weight: bold;
+    color: red;
+  }
   
