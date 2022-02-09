@@ -12,6 +12,7 @@ function aumentarContador() {
   spanContador.innerHTML = tempoDeJogo;
 }
 
+
 function addCards(){
   while(numeroDeCartas<4 || numeroDeCartas>14 || numeroDeCartas%2 ==1)
    numeroDeCartas = parseInt(prompt("Quantas cartas?"));
@@ -70,7 +71,7 @@ function checkForMatch() {
   isMatch ? disablecartas() : unflipcartas();
   jogadas ++
   if (pontos == numeroDeCartas/2){
-    alert(`Você ganhou em ${jogadas} jogadas! e em${tempoDeJogo} segundos`)
+    alert(`Você ganhou em ${jogadas} jogadas! e em ${tempoDeJogo} segundos`)
   }
   if (vidas==0){
     alert(`perdeu calvo`)
